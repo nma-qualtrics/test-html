@@ -25,14 +25,16 @@
           <div class="tooltip">Search</div>
         </button>
         <!-- Put position absolute inside position relative -->
-        <button class="voice-search-button" onclick="showDate()">
+        <button class="voice-search-button" onclick="dispatchCustomEvent()">
           <img class="voice-search-icon" src="icons/voice-search-icon.svg">
           <div class="tooltip">Search with your voice</div>
         </button>
         <script>
-            function showDate() {
-                let d = new Date();
-                alert("Today's date is " + d);
+            function dispatchCustomEvent() {
+                // let d = new Date();
+                // alert("Today's date is " + d);
+                var dxaEvent = new CustomEvent("newCheckingaccount", {bubbles: true});
+                document.dispatchEvent(dxaEvent);
             }
         </script>
       </div>
